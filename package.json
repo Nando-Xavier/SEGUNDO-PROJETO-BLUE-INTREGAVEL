@@ -1,0 +1,18 @@
+{
+    "name": "projeto02",
+    "version": "1.0.0",
+    "description": "",
+    "main": "pedra-papel-tesoura.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "prettier": "^2.6.0"
+    },
+    "dependencies": {
+        "prompt-sync": "^4.2.0"
+    }
+}
