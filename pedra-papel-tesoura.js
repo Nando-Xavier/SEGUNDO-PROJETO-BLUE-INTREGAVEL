@@ -12,108 +12,106 @@ let tentativa = 0;
 let empate = 0;
 while (iniciar == 'sim') {
     if (iniciar == 'sim') {
-        if (true) {
-            rodadas = +prompt('Você gostaria e jogar quantas rodadas? ');
+        rodadas = +prompt('Você gostaria e jogar quantas rodadas? ');
+        console.log();
+        externo: while (tentativa < rodadas) {
             console.log();
-            externo: while (tentativa < rodadas) {
-                console.log();
-                const escolhaUsuario = prompt(
-                    'Por gentileza, faça sua escolha no jokenpô. ',
-                ).toLowerCase();
-                console.log();
-                const escolhaComputador =
-                    jokenpo[Math.floor(Math.random() * jokenpo.length)];
-                console.log(`Escolha do computador = ${escolhaComputador}`);
-                console.log();
-                if (
-                    escolhaUsuario == 'pedra' ||
-                    escolhaUsuario == 'papel' ||
-                    escolhaUsuario == 'tesoura'
-                ) {
-                    interno: while (true) {
-                        if (
-                            escolhaUsuario == 'pedra' &&
-                            escolhaComputador == 'papel'
-                        ) {
-                            computador++;
-                            tentativa++;
-                            console.log('COMPUTADOR VENCEU');
-                        } else if (
-                            escolhaUsuario == 'pedra' &&
-                            escolhaComputador == 'tesoura'
-                        ) {
-                            usuario++;
-                            tentativa++;
-                            console.log('usuario venceu');
-                        } else if (
-                            escolhaUsuario == 'pedra' &&
-                            escolhaComputador == 'pedra'
-                        ) {
-                            tentativa++;
-                            empate++;
-                            console.log('empatou');
-                        } else if (
-                            escolhaUsuario == 'papel' &&
-                            escolhaComputador == 'papel'
-                        ) {
-                            tentativa++;
-                            empate++;
-                            console.log('empatou');
-                        } else if (
-                            escolhaUsuario == 'papel' &&
-                            escolhaComputador == 'pedra'
-                        ) {
-                            usuario++;
-                            tentativa++;
-                            console.log('usuario venceu');
-                        } else if (
-                            escolhaUsuario == 'papel' &&
-                            escolhaComputador == 'tesoura'
-                        ) {
-                            computador++;
-                            tentativa++;
-                            console.log('computador venceu');
-                        } else if (
-                            escolhaUsuario == 'tesoura' &&
-                            escolhaComputador == 'papel'
-                        ) {
-                            usuario++;
-                            tentativa++;
-                            console.log('usuario venceu');
-                        } else if (
-                            escolhaUsuario == 'tesoura' &&
-                            escolhaComputador == 'pedra'
-                        ) {
-                            computador++;
-                            tentativa++;
-                            console.log('computador venceu');
-                        } else if (
-                            escolhaUsuario == 'tesoura' &&
-                            escolhaComputador == 'tesoura'
-                        ) {
-                            tentativa++;
-                            empate++;
-                            console.log('empatou');
-                        }
-                        break interno;
+            const escolhaUsuario = prompt(
+                'Por gentileza, faça sua escolha no jokenpô. ',
+            ).toLowerCase();
+            console.log();
+            const escolhaComputador =
+                jokenpo[Math.floor(Math.random() * jokenpo.length)];
+            console.log(`Escolha do computador = ${escolhaComputador}`);
+            console.log();
+            if (
+                escolhaUsuario == 'pedra' ||
+                escolhaUsuario == 'papel' ||
+                escolhaUsuario == 'tesoura'
+            ) {
+                interno: while (true) {
+                    if (
+                        escolhaUsuario == 'pedra' &&
+                        escolhaComputador == 'papel'
+                    ) {
+                        computador++;
+                        tentativa++;
+                        console.log('COMPUTADOR VENCEU');
+                    } else if (
+                        escolhaUsuario == 'pedra' &&
+                        escolhaComputador == 'tesoura'
+                    ) {
+                        usuario++;
+                        tentativa++;
+                        console.log('usuario venceu');
+                    } else if (
+                        escolhaUsuario == 'pedra' &&
+                        escolhaComputador == 'pedra'
+                    ) {
+                        tentativa++;
+                        empate++;
+                        console.log('empatou');
+                    } else if (
+                        escolhaUsuario == 'papel' &&
+                        escolhaComputador == 'papel'
+                    ) {
+                        tentativa++;
+                        empate++;
+                        console.log('empatou');
+                    } else if (
+                        escolhaUsuario == 'papel' &&
+                        escolhaComputador == 'pedra'
+                    ) {
+                        usuario++;
+                        tentativa++;
+                        console.log('usuario venceu');
+                    } else if (
+                        escolhaUsuario == 'papel' &&
+                        escolhaComputador == 'tesoura'
+                    ) {
+                        computador++;
+                        tentativa++;
+                        console.log('computador venceu');
+                    } else if (
+                        escolhaUsuario == 'tesoura' &&
+                        escolhaComputador == 'papel'
+                    ) {
+                        usuario++;
+                        tentativa++;
+                        console.log('usuario venceu');
+                    } else if (
+                        escolhaUsuario == 'tesoura' &&
+                        escolhaComputador == 'pedra'
+                    ) {
+                        computador++;
+                        tentativa++;
+                        console.log('computador venceu');
+                    } else if (
+                        escolhaUsuario == 'tesoura' &&
+                        escolhaComputador == 'tesoura'
+                    ) {
+                        tentativa++;
+                        empate++;
+                        console.log('empatou');
                     }
+                    break interno;
                 }
-                if (
-                    escolhaUsuario != 'pedra' &&
-                    escolhaUsuario != 'papel' &&
-                    escolhaUsuario != 'tesoura'
-                ) {
-                    console.log(
-                        'Escolha errada, por favor escolha algo entre "PEDRA", "PAPEL" ou "TESOURA".',
-                    );
-                }
-                console.log();
-                console.log(`USUÁRIO = ${usuario}`);
-                console.log(`COMPUTATADOR = ${computador}`);
-                console.log(`EMPATE = ${empate}`);
-                console.log();
-                console.log('-----------------------------------');
             }
+            if (
+                escolhaUsuario != 'pedra' &&
+                escolhaUsuario != 'papel' &&
+                escolhaUsuario != 'tesoura'
+            ) {
+                console.log(
+                    'Escolha errada, por favor escolha algo entre "PEDRA", "PAPEL" ou "TESOURA".',
+                );
+            }
+            console.log();
+            console.log(`USUÁRIO = ${usuario}`);
+            console.log(`COMPUTATADOR = ${computador}`);
+            console.log(`EMPATE = ${empate}`);
+            console.log();
+            console.log('-----------------------------------');
         }
     }
     console.log('FIM DE JOGO');
@@ -128,7 +126,9 @@ while (iniciar == 'sim') {
     console.log();
     console.log('*********************************************************');
     console.log();
-    if (usuario > computador) {
+    if (rodadas == 0) {
+        console.log('PARA CONTINUAR NO JOGO, ESCOLHA UMA OU MAIS RODADAS.');
+    } else if (usuario > computador) {
         console.log(
             `O USUÁRIO FOI O GRANDE VENCEDOR POR ${usuario} X ${computador}.`,
         );
