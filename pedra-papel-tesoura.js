@@ -1,4 +1,5 @@
 const prompt = require('prompt-sync')();
+console.log('JOKENPÔ');
 const jokenpo = ['pedra', 'papel', 'tesoura'];
 let iniciar = prompt(
     'Olá usuário, gostaria de jogar Jokenpô comigo? ',
@@ -8,6 +9,7 @@ let rodadas = 0;
 let computador = 0;
 let usuario = 0;
 let tentativa = 0;
+let empate = 0;
 while (iniciar == 'sim') {
     if (iniciar == 'sim') {
         if (true) {
@@ -17,10 +19,12 @@ while (iniciar == 'sim') {
                 console.log();
                 const escolhaUsuario = prompt(
                     'Por gentileza, faça sua escolha no jokenpô. ',
-                );
+                ).toLowerCase();
                 console.log();
                 const escolhaComputador =
                     jokenpo[Math.floor(Math.random() * jokenpo.length)];
+                console.log(`Escolha do computador = ${escolhaComputador}`);
+                console.log();
                 if (
                     escolhaUsuario == 'pedra' ||
                     escolhaUsuario == 'papel' ||
@@ -33,7 +37,7 @@ while (iniciar == 'sim') {
                         ) {
                             computador++;
                             tentativa++;
-                            console.log('Computador venceu');
+                            console.log('COMPUTADOR VENCEU');
                         } else if (
                             escolhaUsuario == 'pedra' &&
                             escolhaComputador == 'tesoura'
@@ -46,12 +50,14 @@ while (iniciar == 'sim') {
                             escolhaComputador == 'pedra'
                         ) {
                             tentativa++;
+                            empate++;
                             console.log('empatou');
                         } else if (
                             escolhaUsuario == 'papel' &&
                             escolhaComputador == 'papel'
                         ) {
                             tentativa++;
+                            empate++;
                             console.log('empatou');
                         } else if (
                             escolhaUsuario == 'papel' &&
@@ -86,20 +92,31 @@ while (iniciar == 'sim') {
                             escolhaComputador == 'tesoura'
                         ) {
                             tentativa++;
+                            empate++;
                             console.log('empatou');
                         }
                         break interno;
                     }
                 }
+                if (
+                    escolhaUsuario != 'pedra' &&
+                    escolhaUsuario != 'papel' &&
+                    escolhaUsuario != 'tesoura'
+                ) {
+                    console.log(
+                        'Escolha errada, por favor escolha algo entre "PEDRA", "PAPEL" ou "TESOURA".',
+                    );
+                }
                 console.log();
                 console.log(`USUÁRIO = ${usuario}`);
-                console.log();
                 console.log(`COMPUTATADOR = ${computador}`);
+                console.log(`EMPATE = ${empate}`);
                 console.log();
                 console.log('-----------------------------------');
             }
         }
     }
+    console.log('FIM DE JOGO');
     console.log();
     console.log(`TENTATIVAS = ${tentativa}`);
     console.log();
@@ -107,8 +124,9 @@ while (iniciar == 'sim') {
     console.log();
     console.log(`COMPUTATADOR = ${computador}`);
     console.log();
+    console.log(`EMPATE = ${empate}`);
+    console.log();
     console.log('*********************************************************');
-    console.log('FIM DE JOGO');
     console.log();
     if (usuario > computador) {
         console.log(
@@ -125,6 +143,7 @@ while (iniciar == 'sim') {
     tentativa = 0;
     usuario = 0;
     computador = 0;
+    empate = 0;
     iniciar = prompt('deseja continuar jogando? ');
     console.log();
 }
